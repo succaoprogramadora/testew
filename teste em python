@@ -1,0 +1,23 @@
+"""
+teste de anotação com           asas        mundo
+grande extensão                         me  a   me
+de palavras                  aaa a a            viver
+
+código em python
+"""
+import unicodedata
+
+def remover_acentos(texto):
+    return ''.join(c for c in unicodedata.normalize('NFKD', texto) if unicodedata.category(c) != 'Mn')
+
+while True:  # codigo básibo apenas para testes
+    resposta = input("Digite se você é um gambello.  (SIM/NÃO): ").upper()
+    resposta = remover_acentos(resposta)
+    if resposta == "NAO" or resposta == "NÃO":
+        print("QUE NOJO! Você está proibido de ir ao quartel.")
+        break
+    elif resposta == "SIM":
+        print("OK! Abençoado seja, boa viagem ao quartel!")
+    else:
+        print("QUE CHATO, VOCÊ NÃO SABE LER?? DIGITE S-I-M OU N-Ã-O!!")
+    break
